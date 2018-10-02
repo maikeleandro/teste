@@ -30,7 +30,7 @@ while True:
 
 
 
-import socket
+import socketikjnmi´8 h[=89 jiuhg8i7 ub hk[ hk
  
 host = '127.0.0.1'  # mesmo local do servidor
 porta = 8805        # mesma porta do servidor
