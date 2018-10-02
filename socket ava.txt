@@ -1,0 +1,50 @@
+import socket
+from datetime import *
+ 
+host = '127.0.0.1'  # o mesmo que localhost
+porta = 8805         # porta da conexão
+ 
+soquete = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #estou usando TCP/IP
+recebe = (host, porta)
+soquete.bind(recebe)
+soquete.listen(2)
+ 
+print('\nSERVIDOR INICIADO...IP: ', host, 'PORTA: ', porta,' EM: ',datetime.now().strftime('%d/%m/%Y - %H:%M:%S'))
+ 
+while True:
+    conexao, enderecoIP = soquete.accept()
+    print('\nSERVIDOR ACESSADO PELO CLIENTE:', enderecoIP, 'EM: ',datetime.now().strftime('%d/%m/%Y - %H:%M:%S'))
+ 
+    while True:
+        mensagem = conexao.recv(2048)
+        if not mensagem:
+            break
+        print('\nIP CLIENTE:', enderecoIP)
+        print('MENSAGEN RECEBIDA: ', mensagem.decode(),' - ',datetime.now().strftime('%H:%M:%S'))
+ 
+    print('CONEXÃO COM O CLIENTE FINALIZADA...', enderecoIP, ' EM: ',datetime.now().strftime('%d/%m/%Y - %H:%M:%S'))
+    conexao.close()
+
+
+.....................................................................................................................................................
+
+
+
+import socket
+ 
+host = '127.0.0.1'  # mesmo local do servidor
+porta = 8805        # mesma porta do servidor
+ 
+soquete = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+envio = (host,porta)
+soquete.connect(envio)
+ 
+print('Digite: S e pressione ENTER para encerrar...') 
+print('DIGITE A MENSAGEM: ')
+mensagem = input()
+ 
+while mensagem not in ('s','S'):
+    soquete.send(str(mensagem).encode())
+    mensagem = input()
+ 
+soquete.close()
