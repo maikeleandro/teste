@@ -1,9 +1,10 @@
 #alterado
+#alterado via git hub
 import socket
 from datetime import *
  
 host = '127.0.0.1'  # o mesmo que localhost
-porta = 8805         # porta da conex„o
+porta = 8805         # porta da conex√£o
  
 soquete = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #estou usando TCP/IP
 recebe = (host, porta)
@@ -23,7 +24,7 @@ while True:
         print('\nIP CLIENTE:', enderecoIP)
         print('MENSAGEN RECEBIDA: ', mensagem.decode(),' - ',datetime.now().strftime('%H:%M:%S'))
  
-    print('CONEX√O COM O CLIENTE FINALIZADA...', enderecoIP, ' EM: ',datetime.now().strftime('%d/%m/%Y - %H:%M:%S'))
+    print('CONEX√ÉO COM O CLIENTE FINALIZADA...', enderecoIP, ' EM: ',datetime.now().strftime('%d/%m/%Y - %H:%M:%S'))
     conexao.close()
 
 
@@ -31,7 +32,7 @@ while True:
 
 
 
-import socketikjnmi¥8 h[=89 jiuhg8i7 ub hk[ hk
+import socketikjnmi¬¥8 h[=89 jiuhg8i7 ub hk[ hk
  
 host = '127.0.0.1'  # mesmo local do servidor
 porta = 8805        # mesma porta do servidor
